@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+:root {
+    --glow-color: hsl(186, 100%, 69%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    background: linear-gradient(rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url('./img/aliane-schwartzhaupt-QdmUva6qBTk-unsplash.jpg');
+    background-size: cover;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+header,
+footer {
+    width: 100%;
+    height: fit-content;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    color: aqua;
+    text-align: center;
+    line-height: 2em;
+    font-size: 3em;
+    letter-spacing: 1px;
+    font-weight: 800;
+    margin: 0;
+    text-decoration: underline 4px;
+    text-underline-position: under;
+}
+
+h5 {
+    font-family: 'Raleway', sans-serif;
+    color: aqua;
+    text-align: center;
+    line-height: 3em;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.keys {
+    display: grid;
+    min-height: 35vh;
+    max-width: 80%;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-content: center;
+    column-gap: 1em;
+    row-gap: 2em;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.key {
+    border: .35em solid var(--glow-color);
+    border-radius: .45rem;
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    padding: .5em 1em;
+    transition: all 0.1s ease;
+    /* width: 6em; */
+    text-align: center;
+    color: var(--glow-color);
+    /* background: rgba(0, 0, 0, .4); */
+    background: none;
+    /* text-shadow: 0 0 .5rem black; */
+    cursor: pointer;
+    perspective: 2em;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+
+    -webkit-box-shadow: inset 0px 0px .5em 0px var(--glow-color),
+        0px 0px .5em 0px var(--glow-color);
+    -moz-box-shadow: inset 0px 0px .5em 0px var(--glow-color),
+        0px 0px .5em 0px var(--glow-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    animation: border-flicker 2s linear infinite;
+}
+
+.key::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: .4;
+    filter: blur(1em);
+    transform: translateY(120%) rotateX(60deg) scale(1, .35);
+    background: var(--glow-color);
+    pointer-events: none;
+}
+
+.key::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 2em .2em var(--glow-color);
+    transition: opacity 100ms linear;
+}
+
+.playing {
+    transform: scale(1.1);
+    /* border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600; */
+    background-color: var(--glow-color);
+    color: rgba(0, 0, 0, .8);
+    text-shadow: none;
+    animation: none;
+}
+
+kbd,
+.sound {
+    -webkit-text-shadow: 0 0 0 .125em hsl(0 0% 100% / 0.3),
+        0 0 0 .45em --glow-color;
+    -moz-text-shadow: 0 0 0 .125em hsl(0 0% 100% / 0.3),
+        0 0 0 .45em --glow-color;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--glow-color);
+
+}
+
+kbd {
+    display: block;
+    font-size: 3rem;
+    animation: text-flicker 3s linear infinite;
+}
+
+.sound {
+    font-size: 1.3rem;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    /* color: #ffc600; */
+    animation: faulty-flicker 2s linear infinite;
+    opacity: .75;
+    font-weight: 600;
+}
+
+.a {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.s {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.f {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.h {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.l {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.d {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
