@@ -1,0 +1,61 @@
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+body {
+    width: 100vw;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .85)), url(./aditya-chinchure-S1ToogvRvlU-unsplash.jpg);
+    background-size: cover;
+    margin: 0;
+    font-size: 2rem; 
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ebf6fa;
+    font-size: 7rem;
+    letter-spacing: 7px;
+    font-family: 'Poppins', 'Arial', sans-serif;
+    font-weight: 700;
+    word-spacing: -15px;
+}
+
+.link-digital {
+    width: 100%;
+    position: fixed;
+    top: 80%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.link-digital>p {
+    font-family: monospace;
+    letter-spacing: -1px;
+    font-weight: 400;
+    word-spacing: -2px;
+    font-size: 1.5rem;
+}
+
+.link-digital a {
+    text-decoration: underline 3px;
+    text-underline-position: under;
+    color: #ebf6fa;
+}

@@ -1,11 +1,13 @@
-*,
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+  *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
 html {
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Poppins', 'Arial', sans-serif;
     font-size: 12px;
     text-align: center;
 }
@@ -15,8 +17,7 @@ body {
     background: linear-gradient(rgba(255, 255, 255, .15), rgba(255, 255, 255, .15)), url(./milad-fakurian-t55GeRpETn0-unsplash.jpg);
     background-size: cover;
     margin: 0;
-    font-size: 2rem;
-    
+    font-size: 2rem; 
     overflow-x: hidden;
 }
 
@@ -34,9 +35,9 @@ main {
     border: 20px solid #ebf6fa;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
     box-shadow: 0 0 4px rgba(0, 0, 0, .1),
         /* inset 0 0 0 3px #efefef, */
         inset 0 0 10px black,
@@ -137,21 +138,46 @@ p {
 
 .xii {
     position: relative;
-    top: -5%;
+    top: -7.5%;
 }
 
 .vi {
     position: relative;
-    top: 57.5%;
+    top: 52.5%;
 }
 
 .iii {
     position: relative;
     left: 47.5%;
+    bottom: 10.5%;
 }
 
 .ix {
     position: relative;
-    top: 28.5%;
+    top: 22.5%;
     right: 47.5%;
+}
+
+.link-digital {
+    width: 100%;
+    position: fixed;
+    top: 80%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.link-digital>p {
+    font-family: monospace;
+    letter-spacing: -1px;
+    font-weight: 400;
+    word-spacing: -2px;
+    font-size: 1.5rem;
+}
+
+.link-digital a {
+    text-decoration: underline 3px;
+    text-underline-position: under;
+    color: #ebf6fa;
 }

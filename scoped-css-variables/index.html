@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 30 | Updating CSS Variables</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+        }
+
+        :root {
+            --base: #8800ff;
+            --spacing: 10px;
+            --blur: 10px;
+        }
+
+        /*Styles based on CSS varibles go here...*/
+        img {
+            padding: var(--spacing);
+            background: var(--base);
+            filter: blur(var(--blur));
+        }
+
+        .hl {
+            color: var(--base);
+        }
+
+        /*CSS styles not dealing with variables...*/
+
+        body {
+            width: 100%;
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+            color: darkslategray;
+            font-weight: 100;
+            font-size: 2rem;
+            background: url(./15273895_5586989.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            overflow-x: hidden;
+        }
+
+        .controls {
+            margin: 20px 0 40px;
+        }
+
+        input {
+            width: 100px;
+        }
+
+        footer {
+            width: 100%;
+            height: fit-content;
+            padding: 1.5rem 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Update CSS variables with <span class="hl">JS</span></h2>
+
+    <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input type="range" id="spacing" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+        <label for="blur">Blur:</label>
+        <input type="range" id="blur" name="blur" min="0" max="25" value="3" data-sizing="px">
+
+        <label for="base">Base Color</label>
+        <input type="color" id="base" name="base" value="#ffc600">
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"
+        alt="nature">
+
+    <footer>
+        <h5>Gideon A. &#169 2023 </h5>
+    </footer>
+
+    <script>
+        const inputs = document.querySelectorAll('.controls input');
+
+        function handleUpdate() {
+            const suffix = this.dataset.sizing || '';
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        }
+
+        inputs.forEach(input => input.addEventListener('change', handleUpdate));
+        inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+    </script>
+</body>
+
+</html>
